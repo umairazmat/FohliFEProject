@@ -1,0 +1,75 @@
+@import "ag-grid-community/styles/ag-grid.css";
+@import "ag-grid-community/styles/ag-theme-quartz.css";
+
+html, body, #root { height: 100%; margin: 0; }
+* { box-sizing: border-box; }
+
+/* AG Grid polish */
+.ag-theme-quartz {
+  --ag-border-radius: 12px;
+  --ag-header-background-color: transparent;
+  --ag-row-hover-color: rgba(14, 165, 233, 0.08);
+  --ag-selected-row-background-color: rgba(14, 165, 233, 0.12);
+}
+
+/* Layout */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  padding: 2rem;
+  background: var(--bg-color);
+  font-family: 'Inter', sans-serif;
+}
+
+/* Header */
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 1200px;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.app-header h1 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+  text-align: center;
+  flex: 1;
+  color: var(--text-color);
+}
+
+/* Main Grid Area */
+.app-main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 1200px;
+  height: calc(100vh - 120px); /* Keeps grid within viewport */
+}
+
+/* AG Grid Adjustments */
+.ag-theme-quartz {
+  --ag-header-height: 40px;
+  --ag-row-height: 40px;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Smooth fade animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
